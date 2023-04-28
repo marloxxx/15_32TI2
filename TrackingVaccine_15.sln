@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingVaccineClient", "TrackingVaccineClient\TrackingVaccineClient.csproj", "{71347445-1DFC-4F9C-99C9-36E5C47916F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingVaccineService", "TrackingVaccineService\TrackingVaccineService.csproj", "{A0A9EB6B-CB00-47AB-B09B-3781048F3DF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71347445-1DFC-4F9C-99C9-36E5C47916F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71347445-1DFC-4F9C-99C9-36E5C47916F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71347445-1DFC-4F9C-99C9-36E5C47916F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71347445-1DFC-4F9C-99C9-36E5C47916F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A9EB6B-CB00-47AB-B09B-3781048F3DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A9EB6B-CB00-47AB-B09B-3781048F3DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A9EB6B-CB00-47AB-B09B-3781048F3DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A9EB6B-CB00-47AB-B09B-3781048F3DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49D4D692-1029-47F1-91D4-A1DA5F7CA92B}
+	EndGlobalSection
+EndGlobal
