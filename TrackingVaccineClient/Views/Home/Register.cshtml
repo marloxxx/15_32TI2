@@ -1,0 +1,59 @@
+﻿@model TrackingVaccineClient.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+ <!-- Start Contact Area -->
+        <section class="prevention__area ptb--40 bg__white prevention__bg htc__contact__area bg__white pt--30 pb--15">
+            <div class="ht__bradcaump__area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bradcaump__title text-center">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+            <!-- Start Conatact Form -->
+            <div class="psy__contact__form mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                            <div class="htc__contact__form__wrap">
+                            <div class="contact-form-wrap">
+                                <h2 class="ct__title text--theme">Register</h2>
+                               @using (Html.BeginForm("Register", "Home", FormMethod.Post)){
+                                    @Html.AntiForgeryToken()
+                                    <div class="single-contact-form">
+                                        <div class="contact-box subject">
+                                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="single-contact-form">
+                                        <div class="contact-box subject">
+                                            @Html.TextBoxFor(model => model.Password, new { placeholder = "Password" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="contact-btn mt-3">
+                                        <button type="submit">Register</button>
+                                    </div>
+                                    <div class="contact-btn mt-3">
+                                        @Html.ActionLink("Login", "Login")
+                                    </div>
+                               }
+                            </div>
+                                                       
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- End Conatact Form -->
+        </section>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TrackingVaccineClient.ProcedurService.>
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_LayoutBackend.cshtml";
+}
+
+<main>
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <div class="container-xl px-4">
+            <div class="page-header-content pt-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto mt-4">
+                        <h1 class="page-header-title">
+                            <div class="page-header-icon">
+                                <i data-feather="activity"></i>
+                            </div>
+                            List Vaccine
+                        </h1>
+                        <div class="page-header-subtitle">
+                            List Vaccine
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-auto mt-4">
+                        <div class="btn-group">
+                          @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-sm" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main page content-->
+    <div class="container-xl px-4 mt-n10">
+        <div class="card mb-4">
+            <div class="card-header">List Vaccine</div>
+            <div class="card-body">
+                <table id="datatables" class="table" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>ID Vaccine</th>
+                            <th>Nama</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

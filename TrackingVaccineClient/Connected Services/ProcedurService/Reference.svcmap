@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="4a34ec01-fae4-421d-8a74-073277f820b6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52962/ProcedurService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProcedurService.xsd" MetadataType="Schema" ID="377e2430-30de-4d3e-8d60-c5a33a6fee95" SourceId="1" SourceUrl="http://localhost:52962/ProcedurService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProcedurService1.xsd" MetadataType="Schema" ID="3cce9463-e0ca-4758-8047-eb476b4e997d" SourceId="1" SourceUrl="http://localhost:52962/ProcedurService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProcedurService2.xsd" MetadataType="Schema" ID="508beb9b-30bc-48da-b782-7eddfaa4dd98" SourceId="1" SourceUrl="http://localhost:52962/ProcedurService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProcedurService.wsdl" MetadataType="Wsdl" ID="5468c034-af7d-452f-857a-84b400d733fd" SourceId="1" SourceUrl="http://localhost:52962/ProcedurService.svc?wsdl" />
+    <MetadataFile FileName="ProcedurService.disco" MetadataType="Disco" ID="af058aed-6f5d-42b7-a995-b4cf73bc657b" SourceId="1" SourceUrl="http://localhost:52962/ProcedurService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
