@@ -1,4 +1,4 @@
-﻿@model TrackingVaccineClient.Models.User
+﻿@model TrackingVaccineService.User
 @{
     ViewBag.Title = "Login";
 }
@@ -28,15 +28,15 @@
                             @Html.AntiForgeryToken()
                             <div class="single-contact-form">
                                 <div class="contact-box subject">
-                                    @Html.TextBoxFor(model => model.Email, new { placeholder = "Email" })
+                                    @Html.TextBoxFor(model => model.username, new { placeholder = "Email" })
                                 </div>
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
                             <div class="single-contact-form">
                                 <div class="contact-box subject">
-                                    @Html.TextBoxFor(model => model.Password, new { placeholder = "Password" })
+                                    @Html.TextBoxFor(model => model.password, new { placeholder = "Password" })
                                 </div>
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                             </div>
                             <div class="contact-btn mt-3">
                                 <button type="submit">Login</button>
