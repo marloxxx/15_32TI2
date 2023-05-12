@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRACKING_VAKSIN_15Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Residents">
+    <Key>
+      <PropertyRef Name="NIK" />
+    </Key>
+    <Property Name="NIK" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="32" />
+    <Property Name="age" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="64" />
+    <Property Name="gender" Type="varchar" MaxLength="1" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="32" />
+    <Property Name="password" Type="varchar" MaxLength="32" />
+    <Property Name="role" Type="varchar" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="Vaccine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="16" />
+    <Property Name="registered_number" Type="varchar" MaxLength="16" />
+    <Property Name="registered_date" Type="date" />
+    <Property Name="created_at" Type="date" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <Association Name="FK__Residents__user___1273C1CD">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Residents" Type="Self.Residents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Residents">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TRACKING_VAKSIN_15ModelStoreContainer">
+    <EntitySet Name="Residents" EntityType="Self.Residents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vaccine" EntityType="Self.Vaccine" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Residents__user___1273C1CD" Association="Self.FK__Residents__user___1273C1CD">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Residents" EntitySet="Residents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

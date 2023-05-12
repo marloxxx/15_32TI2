@@ -21,6 +21,18 @@ namespace TrackingVaccineClient.ProcedurService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/GetVaccines", ReplyAction="http://tempuri.org/IProcedurService/GetVaccinesResponse")]
         System.Threading.Tasks.Task<TrackingVaccineService.Vaccine[]> GetVaccinesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/GetVaccine", ReplyAction="http://tempuri.org/IProcedurService/GetVaccineResponse")]
+        TrackingVaccineService.Vaccine GetVaccine(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/GetVaccine", ReplyAction="http://tempuri.org/IProcedurService/GetVaccineResponse")]
+        System.Threading.Tasks.Task<TrackingVaccineService.Vaccine> GetVaccineAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/create", ReplyAction="http://tempuri.org/IProcedurService/createResponse")]
+        bool create(TrackingVaccineService.Vaccine vaccine);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/create", ReplyAction="http://tempuri.org/IProcedurService/createResponse")]
+        System.Threading.Tasks.Task<bool> createAsync(TrackingVaccineService.Vaccine vaccine);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/update", ReplyAction="http://tempuri.org/IProcedurService/updateResponse")]
         bool update(TrackingVaccineService.Vaccine vaccine);
         
@@ -28,10 +40,10 @@ namespace TrackingVaccineClient.ProcedurService {
         System.Threading.Tasks.Task<bool> updateAsync(TrackingVaccineService.Vaccine vaccine);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/delete", ReplyAction="http://tempuri.org/IProcedurService/deleteResponse")]
-        bool delete(string code);
+        bool delete(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedurService/delete", ReplyAction="http://tempuri.org/IProcedurService/deleteResponse")]
-        System.Threading.Tasks.Task<bool> deleteAsync(string code);
+        System.Threading.Tasks.Task<bool> deleteAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +81,22 @@ namespace TrackingVaccineClient.ProcedurService {
             return base.Channel.GetVaccinesAsync();
         }
         
+        public TrackingVaccineService.Vaccine GetVaccine(int id) {
+            return base.Channel.GetVaccine(id);
+        }
+        
+        public System.Threading.Tasks.Task<TrackingVaccineService.Vaccine> GetVaccineAsync(int id) {
+            return base.Channel.GetVaccineAsync(id);
+        }
+        
+        public bool create(TrackingVaccineService.Vaccine vaccine) {
+            return base.Channel.create(vaccine);
+        }
+        
+        public System.Threading.Tasks.Task<bool> createAsync(TrackingVaccineService.Vaccine vaccine) {
+            return base.Channel.createAsync(vaccine);
+        }
+        
         public bool update(TrackingVaccineService.Vaccine vaccine) {
             return base.Channel.update(vaccine);
         }
@@ -77,12 +105,12 @@ namespace TrackingVaccineClient.ProcedurService {
             return base.Channel.updateAsync(vaccine);
         }
         
-        public bool delete(string code) {
-            return base.Channel.delete(code);
+        public bool delete(int id) {
+            return base.Channel.delete(id);
         }
         
-        public System.Threading.Tasks.Task<bool> deleteAsync(string code) {
-            return base.Channel.deleteAsync(code);
+        public System.Threading.Tasks.Task<bool> deleteAsync(int id) {
+            return base.Channel.deleteAsync(id);
         }
     }
 }

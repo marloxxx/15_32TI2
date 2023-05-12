@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TrackingVaccineClient.ProcedurService.>
+﻿@model TrackingVaccineService.Vaccine[]
 @{
     ViewBag.Title = "View";
     Layout = "~/Views/Shared/_LayoutBackend.cshtml";
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="btn-group">
-                          @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-sm" })
+                            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-sm" })
                         </div>
                     </div>
                 </div>
@@ -43,15 +43,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach(var item in Model)
+                        @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Id</td>
-                                <td>@item.Name</td>
+                                <td>@item.id</td>
+                                <td>@item.code</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-warning" })
+                                    
+                                    <a href="#" class="btn btn-danger" onclick="sweetAlertDelete('@item.id')">Delete</a>
                                 </td>
                             </tr>
                         }
@@ -61,3 +61,36 @@
         </div>
     </div>
 </main>
+@section scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if (ViewBag.status == true)
+    {
+        <script>
+            swal({
+                title: "Success",
+                text: ViewBag.message,
+                icon: "success",
+                button: "ok"
+            });
+        </script>
+    }
+    <script>
+        function sweetAlertDelete(id) {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    
+                    if (willDelete) {
+                        window.location.href = "/Procedur/Delete/" + id;
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+        }
+    </script>
+}

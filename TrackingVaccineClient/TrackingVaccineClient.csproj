@@ -134,7 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Vaccine.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +237,8 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Procedur\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutBackend.cshtml" />
+    <Content Include="Views\Procedur\Create.cshtml" />
+    <Content Include="Views\Procedur\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

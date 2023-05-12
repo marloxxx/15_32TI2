@@ -1,12 +1,14 @@
 ﻿using System.Web.Mvc;
+using TrackingVaccineClient.Models;
 using TrackingVaccineClient.ProcedurService;
+using TrackingVaccineService;
 
 namespace TrackingVaccineClient.Controllers
 {
     public class ProcedurController : Controller
     {
         // GET: Procedur
-        public ActionResult Index()
+        public ActionResult Index(Session session)
         {
             ProcedurServiceClient procedurService = new ProcedurServiceClient();
             var vaccines = procedurService.GetVaccines();
@@ -27,15 +29,19 @@ namespace TrackingVaccineClient.Controllers
 
         // POST: Procedur/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Vaccine vaccine)
         {
-            try
+            if (string.IsNullOrEmpty(vaccine.code))
+            {
+                ModelState.AddModelError("code", "Code tidak boleh kosong");
+            }
+            if (ModelState.IsValid)
             {
                 ProcedurServiceClient procedurService = new ProcedurServiceClient();
-
+                procedurService.create(vaccine);
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
                 return View();
             }
@@ -44,45 +50,37 @@ namespace TrackingVaccineClient.Controllers
         // GET: Procedur/Edit/5
         public ActionResult Edit(string id)
         {
-            return View();
+            ProcedurServiceClient procedurService = new ProcedurServiceClient();
+            var vaccine = procedurService.GetVaccine(int.Parse(id));
+            return View(vaccine);
         }
 
         // POST: Procedur/Edit/5
         [HttpPost]
-        public ActionResult Edit(string id, FormCollection collection)
+        public ActionResult Edit(Vaccine vaccine)
         {
-            try
+            if (string.IsNullOrEmpty(vaccine.code))
             {
-                // TODO: Add update logic here
-
+                ModelState.AddModelError("code", "Code tidak boleh kosong");
+            }
+            if (ModelState.IsValid)
+            {
+                ProcedurServiceClient procedurService = new ProcedurServiceClient();
+                procedurService.update(vaccine);
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
                 return View();
             }
         }
 
-        // GET: Procedur/Delete/5
+
         public ActionResult Delete(string id)
         {
-            return View();
-        }
-
-        // POST: Procedur/Delete/5
-        [HttpPost]
-        public ActionResult Delete(string id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            ProcedurServiceClient procedurService = new ProcedurServiceClient();
+            procedurService.delete(int.Parse(id));
+            return RedirectToAction("Index");
         }
     }
 }

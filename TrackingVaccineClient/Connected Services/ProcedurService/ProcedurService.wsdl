@@ -13,6 +13,18 @@
   <wsdl:message name="IProcedurService_GetVaccines_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVaccinesResponse" />
   </wsdl:message>
+  <wsdl:message name="IProcedurService_GetVaccine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVaccine" />
+  </wsdl:message>
+  <wsdl:message name="IProcedurService_GetVaccine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVaccineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProcedurService_create_InputMessage">
+    <wsdl:part name="parameters" element="tns:create" />
+  </wsdl:message>
+  <wsdl:message name="IProcedurService_create_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createResponse" />
+  </wsdl:message>
   <wsdl:message name="IProcedurService_update_InputMessage">
     <wsdl:part name="parameters" element="tns:update" />
   </wsdl:message>
@@ -30,6 +42,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProcedurService/GetVaccines" message="tns:IProcedurService_GetVaccines_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProcedurService/GetVaccinesResponse" message="tns:IProcedurService_GetVaccines_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetVaccine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcedurService/GetVaccine" message="tns:IProcedurService_GetVaccine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcedurService/GetVaccineResponse" message="tns:IProcedurService_GetVaccine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcedurService/create" message="tns:IProcedurService_create_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcedurService/createResponse" message="tns:IProcedurService_create_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="update">
       <wsdl:input wsaw:Action="http://tempuri.org/IProcedurService/update" message="tns:IProcedurService_update_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProcedurService/updateResponse" message="tns:IProcedurService_update_OutputMessage" />
@@ -43,6 +63,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetVaccines">
       <soap:operation soapAction="http://tempuri.org/IProcedurService/GetVaccines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVaccine">
+      <soap:operation soapAction="http://tempuri.org/IProcedurService/GetVaccine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="http://tempuri.org/IProcedurService/create" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

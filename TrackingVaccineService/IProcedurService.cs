@@ -9,11 +9,14 @@ namespace TrackingVaccineService
     {
         [OperationContract]
         List<Vaccine> GetVaccines();
+        [OperationContract]
+        Vaccine GetVaccine(int id);
+        [OperationContract]
         bool create(Vaccine vaccine);
         [OperationContract]
         bool update(Vaccine vaccine);
         [OperationContract]
-        bool delete(string code);
+        bool delete(int id);
 
     }
 }

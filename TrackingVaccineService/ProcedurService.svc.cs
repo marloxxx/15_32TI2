@@ -16,6 +16,15 @@ namespace TrackingVaccineService
             return query;
         }
 
+        public Vaccine GetVaccine(int id)
+        {
+            var entities = new TRACKING_VAKSIN_15Entities();
+            var query = (from vaccine in entities.Vaccines
+                         where vaccine.id == id
+                         select vaccine).FirstOrDefault();
+            return query;
+        }
+
         public bool create(Vaccine vaccine)
         {
             var entities = new TRACKING_VAKSIN_15Entities();
@@ -24,11 +33,11 @@ namespace TrackingVaccineService
             return true;
         }
 
-        public bool delete(string code)
+        public bool delete(int id)
         {
             var entities = new TRACKING_VAKSIN_15Entities();
             var query = (from vaccine in entities.Vaccines
-                         where vaccine.code == code
+                         where vaccine.id == id
                          select vaccine).FirstOrDefault();
             if (query != null)
             {
@@ -41,8 +50,6 @@ namespace TrackingVaccineService
                 return false;
             }
         }
-
-
 
         public bool update(Vaccine vaccine)
         {
