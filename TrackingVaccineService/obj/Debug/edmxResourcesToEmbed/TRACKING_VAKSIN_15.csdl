@@ -10,7 +10,9 @@
     <Property Name="address" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="user_id" Type="Int32" />
+    <Property Name="status" Type="Int32" />
     <NavigationProperty Name="User" Relationship="Self.FK__Residents__user___1273C1CD" FromRole="Residents" ToRole="Users" />
+    <NavigationProperty Name="VaccineUsages" Relationship="Self.FK__VaccineUs__resid__182C9B23" FromRole="Residents" ToRole="VaccineUsage" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -32,6 +34,18 @@
     <Property Name="registered_date" Type="DateTime" Precision="0" />
     <Property Name="created_at" Type="DateTime" Precision="0" />
     <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="VaccineUsages" Relationship="Self.FK__VaccineUs__vacci__173876EA" FromRole="Vaccine" ToRole="VaccineUsage" />
+  </EntityType>
+  <EntityType Name="VaccineUsage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vaccine_id" Type="Int32" />
+    <Property Name="resident_id" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="used_at" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Resident" Relationship="Self.FK__VaccineUs__resid__182C9B23" FromRole="VaccineUsage" ToRole="Residents" />
+    <NavigationProperty Name="Vaccine" Relationship="Self.FK__VaccineUs__vacci__173876EA" FromRole="VaccineUsage" ToRole="Vaccine" />
   </EntityType>
   <Association Name="FK__Residents__user___1273C1CD">
     <End Role="Users" Type="Self.User" Multiplicity="0..1" />
@@ -45,13 +59,46 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__VaccineUs__resid__182C9B23">
+    <End Role="Residents" Type="Self.Resident" Multiplicity="0..1" />
+    <End Role="VaccineUsage" Type="Self.VaccineUsage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Residents">
+        <PropertyRef Name="NIK" />
+      </Principal>
+      <Dependent Role="VaccineUsage">
+        <PropertyRef Name="resident_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VaccineUs__vacci__173876EA">
+    <End Role="Vaccine" Type="Self.Vaccine" Multiplicity="0..1" />
+    <End Role="VaccineUsage" Type="Self.VaccineUsage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vaccine">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="VaccineUsage">
+        <PropertyRef Name="vaccine_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TRACKING_VAKSIN_15Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Residents" EntityType="Self.Resident" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="Vaccines" EntityType="Self.Vaccine" />
+    <EntitySet Name="VaccineUsages" EntityType="Self.VaccineUsage" />
     <AssociationSet Name="FK__Residents__user___1273C1CD" Association="Self.FK__Residents__user___1273C1CD">
       <End Role="Users" EntitySet="Users" />
       <End Role="Residents" EntitySet="Residents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VaccineUs__resid__182C9B23" Association="Self.FK__VaccineUs__resid__182C9B23">
+      <End Role="Residents" EntitySet="Residents" />
+      <End Role="VaccineUsage" EntitySet="VaccineUsages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VaccineUs__vacci__173876EA" Association="Self.FK__VaccineUs__vacci__173876EA">
+      <End Role="Vaccine" EntitySet="Vaccines" />
+      <End Role="VaccineUsage" EntitySet="VaccineUsages" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -45,10 +45,7 @@ namespace TrackingVaccineService
                 entities.SaveChanges();
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool update(Vaccine vaccine)
@@ -63,10 +60,22 @@ namespace TrackingVaccineService
                 entities.SaveChanges();
                 return true;
             }
-            else
+            return false;
+        }
+
+        public bool send(int id)
+        {
+            var entities = new TRACKING_VAKSIN_15Entities();
+            var query = (from v in entities.Vaccines
+                         where v.id == id
+                         select v).FirstOrDefault();
+            if (query != null)
             {
-                return false;
+                query.status = 3;
+                entities.SaveChanges();
+                return true;
             }
+            return false;
         }
     }
 }

@@ -4,11 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7709f19c8d78428e8ce9c60b3145ff39" Name="Diagram1">
+      <Diagram DiagramId="9223f31d4a5544548e0aa8044c375ee5" Name="Diagram1">
         <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.Resident" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.Vaccine" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.User" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.Vaccine" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRACKING_VAKSIN_15Model.VaccineUsage" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="TRACKING_VAKSIN_15Model.FK__Residents__user___1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="TRACKING_VAKSIN_15Model.FK__VaccineUs__resid__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="TRACKING_VAKSIN_15Model.FK__VaccineUs__vacci__173876EA" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

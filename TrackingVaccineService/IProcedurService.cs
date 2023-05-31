@@ -17,6 +17,7 @@ namespace TrackingVaccineService
         bool update(Vaccine vaccine);
         [OperationContract]
         bool delete(int id);
-
+        [OperationContract]
+        bool send(int id);
     }
 }

@@ -16,10 +16,7 @@ namespace TrackingVaccineService
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool Register(string username, string password, string NIK, string name, int age, string address, string gender)
@@ -47,6 +44,7 @@ namespace TrackingVaccineService
             resident.age = age;
             resident.address = address;
             resident.gender = gender;
+            resident.status = 0;
             // save
             entities.Residents.Add(resident);
             entities.SaveChanges();
@@ -54,6 +52,13 @@ namespace TrackingVaccineService
             return true;
         }
 
+        public User GetUser(string username)
+        {
+            var entities = new TRACKING_VAKSIN_15Entities();
+            var query = (from user in entities.Users
+                         where user.username == username
+                         select user).FirstOrDefault();
+            return query;
+        }
     }
-
 }

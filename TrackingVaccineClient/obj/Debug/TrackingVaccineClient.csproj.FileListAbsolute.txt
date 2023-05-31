@@ -1,5 +1,3 @@
-D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.csproj.AssemblyReference.cache
-D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.csproj.CoreCompileInputs.cache
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\TrackingVaccineClient.dll.config
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\TrackingVaccineClient.dll
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\TrackingVaccineClient.pdb
@@ -51,6 +49,7 @@ D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Entit
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\TrackingVaccineService.pdb
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\TrackingVaccineService.dll.config
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Newtonsoft.Json.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.Helpers.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.Mvc.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.Optimization.xml
@@ -58,9 +57,10 @@ D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Syste
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.WebPages.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.WebPages.Deployment.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\System.Web.WebPages.Razor.xml
-D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Newtonsoft.Json.xml
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\Antlr3.Runtime.pdb
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\bin\EntityFramework.xml
+D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.csproj.AssemblyReference.cache
+D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.csproj.CoreCompileInputs.cache
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.csproj.CopyComplete
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.dll
 D:\Semester 4\Tek .NET\Proyek\TrackingVaccine_15\TrackingVaccineClient\obj\Debug\TrackingVaccineClient.pdb

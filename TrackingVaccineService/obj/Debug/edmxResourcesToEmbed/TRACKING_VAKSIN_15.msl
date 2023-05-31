@@ -10,6 +10,7 @@
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,6 +33,16 @@
           <ScalarProperty Name="registered_date" ColumnName="registered_date" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
           <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VaccineUsages">
+      <EntityTypeMapping TypeName="TRACKING_VAKSIN_15Model.VaccineUsage">
+        <MappingFragment StoreEntitySet="VaccineUsage">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vaccine_id" ColumnName="vaccine_id" />
+          <ScalarProperty Name="resident_id" ColumnName="resident_id" />
+          <ScalarProperty Name="used_at" ColumnName="used_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -28,7 +28,7 @@
                             @Html.AntiForgeryToken()
                             <div class="single-contact-form">
                                 <div class="contact-box subject">
-                                    @Html.TextBoxFor(model => model.username, new { placeholder = "Email" })
+                                    @Html.TextBoxFor(model => model.username, new { placeholder = "Username" })
                                 </div>
                                 @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                             </div>
@@ -55,3 +55,20 @@
 
     <!-- End Conatact Form -->
 </section>
+@section Scripts {
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        @if (Session["success"] != null)
+        {
+            <text>
+                swal({
+                    title: "Success!",
+                    text: "@Session["success"]",
+                    icon: "success",
+                    button: "OK",
+                });
+            </text>
+        }
+        @Session["success"] = null;
+    </script>
+}

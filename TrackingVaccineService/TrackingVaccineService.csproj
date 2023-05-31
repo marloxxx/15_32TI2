@@ -76,11 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthenticationService.svc" />
+    <Content Include="BPOMService.svc" />
+    <Content Include="GovermentService.svc" />
     <Content Include="ProcedurService.svc" />
     <Content Include="TRACKING_VAKSIN_15.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TRACKING_VAKSIN_15.Context.cs</LastGenOutput>
       <DependentUpon>TRACKING_VAKSIN_15.edmx</DependentUpon>
+      <LastGenOutput>TRACKING_VAKSIN_15.Context.cs</LastGenOutput>
     </Content>
     <Content Include="TRACKING_VAKSIN_15.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -93,7 +95,15 @@
     <Compile Include="AuthenticationService.svc.cs">
       <DependentUpon>AuthenticationService.svc</DependentUpon>
     </Compile>
+    <Compile Include="BPOMService.svc.cs">
+      <DependentUpon>BPOMService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="GovermentService.svc.cs">
+      <DependentUpon>GovermentService.svc</DependentUpon>
+    </Compile>
     <Compile Include="IAuthenticationService.cs" />
+    <Compile Include="IBPOMService.cs" />
+    <Compile Include="IGovermentService.cs" />
     <Compile Include="IProcedurService.cs" />
     <Compile Include="ProcedurService.svc.cs">
       <DependentUpon>ProcedurService.svc</DependentUpon>
@@ -123,16 +133,19 @@
     <Compile Include="Vaccine.cs">
       <DependentUpon>TRACKING_VAKSIN_15.tt</DependentUpon>
     </Compile>
+    <Compile Include="VaccineUsage.cs">
+      <DependentUpon>TRACKING_VAKSIN_15.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <EntityDeploy Include="TRACKING_VAKSIN_15.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TRACKING_VAKSIN_15.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <Content Include="TRACKING_VAKSIN_15.edmx.diagram">
       <DependentUpon>TRACKING_VAKSIN_15.edmx</DependentUpon>
     </Content>

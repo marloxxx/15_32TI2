@@ -10,5 +10,7 @@ namespace TrackingVaccineService
         bool Login(string username, string password);
         [OperationContract]
         bool Register(string username, string password, string NIK, string name, int age, string address, string gender);
+        [OperationContract]
+        User GetUser(string username);
     }
 }

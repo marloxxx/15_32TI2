@@ -20,6 +20,18 @@ namespace TrackingVaccineClient.AuthenticationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Login", ReplyAction="http://tempuri.org/IAuthenticationService/LoginResponse")]
         System.Threading.Tasks.Task<bool> LoginAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Register", ReplyAction="http://tempuri.org/IAuthenticationService/RegisterResponse")]
+        bool Register(string username, string password, string NIK, string name, int age, string address, string gender);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/Register", ReplyAction="http://tempuri.org/IAuthenticationService/RegisterResponse")]
+        System.Threading.Tasks.Task<bool> RegisterAsync(string username, string password, string NIK, string name, int age, string address, string gender);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/GetUser", ReplyAction="http://tempuri.org/IAuthenticationService/GetUserResponse")]
+        TrackingVaccineService.User GetUser(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthenticationService/GetUser", ReplyAction="http://tempuri.org/IAuthenticationService/GetUserResponse")]
+        System.Threading.Tasks.Task<TrackingVaccineService.User> GetUserAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +67,22 @@ namespace TrackingVaccineClient.AuthenticationService {
         
         public System.Threading.Tasks.Task<bool> LoginAsync(string username, string password) {
             return base.Channel.LoginAsync(username, password);
+        }
+        
+        public bool Register(string username, string password, string NIK, string name, int age, string address, string gender) {
+            return base.Channel.Register(username, password, NIK, name, age, address, gender);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterAsync(string username, string password, string NIK, string name, int age, string address, string gender) {
+            return base.Channel.RegisterAsync(username, password, NIK, name, age, address, gender);
+        }
+        
+        public TrackingVaccineService.User GetUser(string username) {
+            return base.Channel.GetUser(username);
+        }
+        
+        public System.Threading.Tasks.Task<TrackingVaccineService.User> GetUserAsync(string username) {
+            return base.Channel.GetUserAsync(username);
         }
     }
 }

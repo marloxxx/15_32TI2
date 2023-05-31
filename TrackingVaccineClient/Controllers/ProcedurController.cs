@@ -5,6 +5,7 @@ using TrackingVaccineService;
 
 namespace TrackingVaccineClient.Controllers
 {
+    [Authorize]
     public class ProcedurController : Controller
     {
         // GET: Procedur
@@ -41,10 +42,7 @@ namespace TrackingVaccineClient.Controllers
                 procedurService.create(vaccine);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Procedur/Edit/5
@@ -52,6 +50,10 @@ namespace TrackingVaccineClient.Controllers
         {
             ProcedurServiceClient procedurService = new ProcedurServiceClient();
             var vaccine = procedurService.GetVaccine(int.Parse(id));
+            if (vaccine == null)
+            {
+                return HttpNotFound();
+            }
             return View(vaccine);
         }
 
@@ -69,18 +71,36 @@ namespace TrackingVaccineClient.Controllers
                 procedurService.update(vaccine);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
-
 
         public ActionResult Delete(string id)
         {
             ProcedurServiceClient procedurService = new ProcedurServiceClient();
-            procedurService.delete(int.Parse(id));
+            if (procedurService.delete(int.Parse(id)))
+            {
+                Session["success"] = "Berhasil dihapus";
+            }
+            else
+            {
+                Session["error"] = "Gagal dihapus";
+            }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Verify(string id)
+        {
+            TrackingVaccineClient.BPOMService.BPOMServiceClient client = new TrackingVaccineClient.BPOMService.BPOMServiceClient();
+            if (client.Verify(int.Parse(id)))
+            {
+                Session["success"] = "Berhasil diverifikasi";
+               
+            } else
+            {
+                Session["error"] = "Gagal diverifikasi";
+            }
+            return RedirectToAction("Index");
+
         }
     }
 }

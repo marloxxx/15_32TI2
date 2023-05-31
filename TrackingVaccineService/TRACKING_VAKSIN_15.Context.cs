@@ -28,5 +28,6 @@ namespace TrackingVaccineService
         public virtual DbSet<Resident> Residents { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Vaccine> Vaccines { get; set; }
+        public virtual DbSet<VaccineUsage> VaccineUsages { get; set; }
     }
 }

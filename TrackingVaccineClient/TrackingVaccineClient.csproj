@@ -48,6 +48,10 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -103,9 +107,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -124,11 +125,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\BPOMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\GovermentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProcedurService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BPOMController.cs" />
+    <Compile Include="Controllers\GovermentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProcedurController.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,16 +152,47 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AuthenticationService\AuthenticationService.disco" />
+    <None Include="Connected Services\AuthenticationService\AuthenticationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AuthenticationService\configuration91.svcinfo" />
     <None Include="Connected Services\AuthenticationService\configuration.svcinfo" />
     <None Include="Connected Services\AuthenticationService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\BPOMService\BPOMService.wsdl" />
+    <None Include="Connected Services\BPOMService\BPOMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BPOMService\BPOMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GovermentService\GovermentService.wsdl" />
+    <None Include="Connected Services\GovermentService\GovermentService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GovermentService\GovermentService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProcedurService\ProcedurService.disco" />
     <None Include="Connected Services\ProcedurService\configuration91.svcinfo" />
     <None Include="Connected Services\ProcedurService\configuration.svcinfo" />
     <None Include="Connected Services\ProcedurService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\BPOMService\BPOMService.disco" />
+    <None Include="Connected Services\BPOMService\configuration91.svcinfo" />
+    <None Include="Connected Services\BPOMService\configuration.svcinfo" />
+    <None Include="Connected Services\BPOMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\GovermentService\GovermentService.disco" />
+    <None Include="Connected Services\GovermentService\configuration91.svcinfo" />
+    <None Include="Connected Services\GovermentService\configuration.svcinfo" />
+    <None Include="Connected Services\GovermentService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -199,6 +243,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Properties\DataSources\TrackingVaccineService.Vaccine.datasource" />
+    <Content Include="Properties\DataSources\TrackingVaccineService.User.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -211,6 +256,13 @@
     <Content Include="Scripts\jquery-3.6.4.slim.min.js" />
     <Content Include="Scripts\jquery-3.6.4.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.4.min.map" />
+    <None Include="Scripts\jquery-3.7.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -239,6 +291,8 @@
     <Content Include="Views\Shared\_LayoutBackend.cshtml" />
     <Content Include="Views\Procedur\Create.cshtml" />
     <Content Include="Views\Procedur\Edit.cshtml" />
+    <Content Include="Views\Goverment\Index.cshtml" />
+    <Content Include="Views\BPOM\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +335,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AuthenticationService\" />
+    <WCFMetadataStorage Include="Connected Services\BPOMService\" />
+    <WCFMetadataStorage Include="Connected Services\GovermentService\" />
     <WCFMetadataStorage Include="Connected Services\ProcedurService\" />
   </ItemGroup>
   <PropertyGroup>

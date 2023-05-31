@@ -14,11 +14,20 @@ namespace TrackingVaccineService
     
     public partial class Vaccine
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Vaccine()
+        {
+            this.VaccineUsages = new HashSet<VaccineUsage>();
+        }
+    
         public int id { get; set; }
         public string code { get; set; }
         public string registered_number { get; set; }
         public Nullable<System.DateTime> registered_date { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
         public Nullable<int> status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VaccineUsage> VaccineUsages { get; set; }
     }
 }
